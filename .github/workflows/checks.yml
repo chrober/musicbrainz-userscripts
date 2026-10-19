@@ -16,10 +16,6 @@ jobs:
           cache: 'pnpm'
       - name: 'Install dependencies'
         run: pnpm install --frozen-lockfile
-      - name: 'Show required formatting changes'
-        run: |
-          pnpm exec oxfmt discogs_importer.user.js
-          git diff -- discogs_importer.user.js
       - name: 'Format check'
         run: pnpm format:check
       - name: 'Run type checking'

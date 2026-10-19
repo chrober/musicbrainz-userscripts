@@ -922,7 +922,7 @@ function parseDiscogsRelease(discogsRelease) {
             if (tmp) {
                 tmp[1] = parseInt(tmp[1], 10);
                 let prevReleaseNumber = releaseNumber;
-    
+
                 if (Number.isInteger(tmp[1])) {
                     if (tmp[2]) {
                         // 1-1, 1-2, 2-1, ... - we can get release number and track number from this
@@ -948,7 +948,7 @@ function parseDiscogsRelease(discogsRelease) {
                         buggyTrackNumber = true;
                     }
                 }
-    
+
                 if (releaseNumber > release_formats.length) {
                     // something went wrong in track position parsing
                     buggyTrackNumber = true;
@@ -959,7 +959,7 @@ function parseDiscogsRelease(discogsRelease) {
                     lastPosition++;
                 }
             }
-    
+
         }
 
         // Create release if needed

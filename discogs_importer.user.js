@@ -909,7 +909,7 @@ function parseDiscogsRelease(discogsRelease) {
             if (!prefixedMediumNumbers.has(key)) {
                 const number = prefixedMediumNumbers.size + 1;
                 prefixedMediumNumbers.set(key, number);
-                const formatIndex = unusedPrefixedFormats.findIndex((format) =>
+                const formatIndex = unusedPrefixedFormats.findIndex(format =>
                     kind === 'DVD' ? /^DVD/i.test(format) : /CD/i.test(format) && !/^DVD/i.test(format),
                 );
                 prefixedMediumFormats[number - 1] =
@@ -959,7 +959,6 @@ function parseDiscogsRelease(discogsRelease) {
                     lastPosition++;
                 }
             }
-
         }
 
         // Create release if needed

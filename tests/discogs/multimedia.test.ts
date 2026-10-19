@@ -24,7 +24,7 @@ function parsePositions(positions: string[], formats: { name: string; qty: strin
         })),
     };
 
-    return parseRelease(input).discs as Medium[];
+    return parseRelease(input)['discs'] as Medium[];
 }
 
 describe('Discogs medium splitting regression tests', () => {
@@ -42,9 +42,9 @@ describe('Discogs medium splitting regression tests', () => {
 
         expect(discs.map(disc => disc.format)).toEqual(['CD', 'DVD-Video', 'CD']);
         expect(discs.map(disc => disc.tracks.length)).toEqual([16, 17, 11]);
-        expect(discs[0].tracks[0].title).toBe('Track 1');
-        expect(discs[1].tracks[0].title).toBe('Track 17');
-        expect(discs[2].tracks[0].title).toBe('Track 34');
+        expect(discs[0]?.tracks[0]?.title).toBe('Track 1');
+        expect(discs[1]?.tracks[0]?.title).toBe('Track 17');
+        expect(discs[2]?.tracks[0]?.title).toBe('Track 34');
     });
 
     it.each([
